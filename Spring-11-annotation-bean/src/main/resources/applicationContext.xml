@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation=
+               "http://www.springframework.org/schema/beans
+                http://www.springframework.org/schema/beans/spring-beans.xsd
+                http://www.springframework.org/schema/context
+                http://www.springframework.org/schema/context/spring-context.xsd"
+
+>
+
+    <!--<bean class="dao.impl.BookDaoImpl" id="bookDao"/>-->
+
+    <!--
+    注解开发
+    1.bookDaoImpl类实现注解
+    2.context:component-scan 扫描组件 base-package指定类的包
+
+    Spring提供@Component注解的三个衍生注解
+    1.@Controller 用于表现层bean定义
+    2.@Service 用于业务层bean定义
+    3.@Repository 用于数据层bean定义
+    -->
+    <!--<context:component-scan base-package="dao.impl"/>-->
+    <context:component-scan base-package="org.example"/>
+
+
+
+</beans>

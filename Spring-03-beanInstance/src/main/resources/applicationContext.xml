@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--方式1 构造方法实例化bean （常用）-->
+    <!--<bean class="dao.impl.BookDaoImpl" id="bookDao"/>-->
+
+    <!--方式2 使用静态工厂实例化bean 兼容早期遗留系统-->
+    <!--<bean id="orderDao" class="factory.OrderDaoFactory" factory-method="getOrderDao"/>-->
+
+    <!--方式3 使用实例工厂实例化bean-->
+    <!--<bean id="userDaoFactory" class="factory.UserDaoFactory"/>
+    <bean id="userDao" factory-bean="userDaoFactory" factory-method="getUserDao"/>-->
+
+    <!--方式4 使用FactoryBean实例化 （实用）-->
+    <bean id="userDao" class="factory.UserDaoFactoryBean"/>
+</beans>

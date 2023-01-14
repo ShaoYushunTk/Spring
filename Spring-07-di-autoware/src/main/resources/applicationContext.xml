@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="dao.impl.BookDaoImpl" id="bookDao"/>
+    <!--自动装配 按类型 给定setter方法 也需要给定对应bookDao的bean-->
+    <bean class="service.impl.BookServiceImpl" id="bookService" autowire="byType"/>
+    <!--按名称 byName 匹配时需要bookDao的bean的id和bookServiceImpl的成员变量名称对应 耦合度较高不推荐使用-->
+
+
+</beans>

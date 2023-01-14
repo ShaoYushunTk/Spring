@@ -1,0 +1,20 @@
+package org.example.service;
+
+import org.springframework.transaction.annotation.Transactional;
+
+import java.io.IOException;
+
+public interface AccountService {
+
+    /**
+     * 转账操作
+     * @param out 传出方
+     * @param in 转入方
+     * @param money 金额
+     * rollbackFor 遇到以下的异常就回滚
+     */
+    //配置当前接口方法具有事务
+    @Transactional
+    public void transfer(String out,String in ,Double money);
+
+}
